@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+	<script src="anna.js"></script>
+	<title>Form - Anna Dahlberg</title>
+	<link rel="icon" href="img/icon_brusch.jpg" type="image/x-icon">
+	
+</head>
+
+<body>
+	
+	<header>
+		
+	</header>
+   
+	<main>
+        <div id="ruta">
+            <h1>Quiz</h1>
+		    <form id="form">
+				<fieldset id="personal">
+				<legend>Please, enter your personal information</legend>
+				<label for="fname" class="tfield">First name: <span class="star"> * </span></label><input type="text" id="fname" name="fname" title="Only letters is allowed.">
+                <label for="sname" class="tfield">Surname:<span class="star"> * </span></label><input type="text" id="sname" name="sname" title="Only letters is allowed.">
+				<label for="mail" class="tfield">E-mail: <span class="star"> * </span></label><input type="text" id="mail" name="mail">
+			</fieldset>
+			<p>hej
+
+			</p>
+				
+				<section>
+					<h3>1. What is the capital of Sweden?</h3>
+					<label><input type="radio" name="choice1" value="Göteborg">Göteborg</label>
+					<label><input type="radio" name="choice1" value="Malmö">Malmö</label>
+					<label><input type="radio" name="choice1" value="Stockholm">Stockholm</label>
+				</section>
+
+				<section>
+					<h3>2. What devices do you have at home? <span class="star"> * </span></h3>
+					<label><input type="checkbox" name="choice2" value="TV">TV</label>
+					<label><input type="checkbox" name="choice2" value="Computer">Computer</label>
+					<label><input type="checkbox" name="choice2" value="CD">CD-player</label>
+                    <label><input type="checkbox" name="choice2" value="Gramophone">Gramophone</label>
+					<label><input type="checkbox" name="choice2" value="None">None of these devices</label>
+				</section>
+
+                <section>
+					<h3>3. What streaming services do you use?</h3>
+					<label><input type="checkbox" name="choice3" value="Disney+">Disney+</label>
+					<label><input type="checkbox" name="choice3" value="Netflix">Netflix</label>
+					<label><input type="checkbox" name="choice3" value="HBO">HBO</label>
+					<label><input type="checkbox" name="choice3" value="Other">Other</label>
+				</section>
+
+				<section>
+					<h3>4. Do you like baking?<span class="star"> * </span></h3>
+					<label><input type="radio" name="choice4" value="Yes">Yes</label>
+					<label><input type="radio" name="choice4" value="No">No</label>
+				</section>
+
+                <section>
+                    <h3>5. What is the city of residence in Värmland?</h3>
+                    <input id="text" type="text" name="text">
+                </section>
+
+				<section>
+					<h3>6. Which continent do you like the most?:</h3>
+					
+					<select id="dropdown" name="val">
+						<option value="alternativ1">North America</option>
+						<option value="alternativ2">South America</option>
+						<option value="alternativ3">Africa</option>
+						<option value="alternativ4">Europe</option>
+						<option value="alternativ5">Asia</option>
+						<option value="alternativ6">Oceania</option>
+						<option value="alternativ7">The arctic continents</option>
+					</select>
+					<br><br>
+					</section>
+
+				<button type="submit">Skicka</button>
+					<h3 id="requiredField"></h3>
+				
+				
+		</form>
+        </div>
+	
+	</main>
+	
+</body>
+
+</html>

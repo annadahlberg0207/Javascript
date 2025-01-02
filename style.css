@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+html {
+    font-family: 'Nunito sans', sans-serif;
+    color: #1c1d1d;
+  }
+
+body{
+    background-image: linear-gradient(to bottom right, #ffffff, #151963);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+h3{
+    margin-top: 40px;
+}
+
+label{
+    margin-right: 20px;
+}
+
+#form{
+    width: 800px;
+}
+
+legend {
+    background-color:#2f3165;
+    color: #FFF;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+#personal{
+    display:grid;
+    gap: 10px;
+    padding: 30px;
+}
+
+#ruta{
+    background-color: white ;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    padding:30px;
+    border-radius: 20px;
+    border: 3px solid #006CB7;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
+}
+.tfield input{
+   border:1px solid #000033;
+   display:block;
+   border-radius: 2px;
+   width:400px;
+}
+
+.star{
+    color: red;
+}
+#requiredField{
+    color: red;
+}
+
+#dropdown{
+    padding: 5px 40px;
+}
+
+button {
+    background-color: #006CB7;
+    color: white;
+    font-size: large;
+    padding: 15px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
+@media (max-width: 885px) {
+    #form{
+        width:fit-content;
+    }
+
+    #ruta {
+        margin-top: 100px;
+        padding: 20px;
+    }
+
+    legend {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .tfield input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
