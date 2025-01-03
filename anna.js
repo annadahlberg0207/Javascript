@@ -6,7 +6,8 @@ let mailField;
 let checkboxes;
 let emailPattern;
 let errorElement;
-let radio;
+let question1radio;
+let question4radio;
 
 function init() { 
 	form = document.getElementById("form");
@@ -30,9 +31,14 @@ function init() {
 		checkbox.addEventListener("change", validateCheckboxes); // en händelselyssnare ser om det händer något med checkboxarna, om de checkas i
 	});
 
-	radio = form.querySelectorAll('input[name="choice4"]'); //undersöker attribut som har namnet choice4
-	radio.forEach(function(radio) {
-		radio.addEventListener("change", validateRadio); // en händelselyssnare ser om det händer något med radioknapparna
+	question4radio = form.querySelectorAll('input[name="choice4"]'); //undersöker attribut som har namnet choice4
+	question4radio.forEach(function(radio) {
+		radio.addEventListener("change", validateRadio4); // en händelselyssnare ser om det händer något med radioknapparna
+	});
+
+	question1radio = form.querySelectorAll('input[name="choice1"]'); //undersöker attribut som har namnet choice4
+	question1radio.forEach(function(radio) {
+		radio.addEventListener("change", validateRadio1); // en händelselyssnare ser om det händer något med radioknapparna
 	});
 
 
@@ -81,8 +87,21 @@ function submitForm(event) {
     }
 
 
-	let AnyChecked = false;
+	let AnyClicked1 = false;
+	console.log("radio clicked");
 
+	for (let i=0; i<question1radio.length; i++){
+		if (question1radio[i].checked) {
+			AnyClicked1 = true;
+		}
+	}
+	if (!AnyClicked1) {
+		errorElement.innerHTML = "Please fill in an answer to question 1"; // om ingen radioknapp är checkad
+		return;
+	}
+
+
+	let AnyChecked = false;
     for (let i=0; i<checkboxes.length; i++) {
 		if (checkboxes[i].checked) {
 			AnyChecked = true;
@@ -95,37 +114,30 @@ function submitForm(event) {
   	}
 	errorElement.innerHTML = "";
 
- 	let AnyClicked = false;
 
- 	for (let i=0; i<radio.length; i++){
-		if (radio[i].checked) {
-			AnyClicked = true;
+
+ 	let AnyClicked4 = false;
+	 console.log("radio clicked");
+
+ 	for (let i=0; i<question4radio.length; i++){
+		if (question4radio[i].checked) {
+			AnyClicked4 = true;
 		}	
 	}
 
-	if (!AnyClicked) {
+	if (!AnyClicked4) {
 		errorElement.innerHTML = "Please fill in an answer to question 4";
 		return;
    
 	}
+
+	
+
+
+
 	errorElement.innerHTML = "The form was submitted successfully!"; // om alla valideringar är korrekta så visas detta meddelande
 }
 
-function validateRadio() { // undersöker om minst en radioknapp är checkad
-	let AnyClicked = false;
-	console.log("radio clicked");
-
-	for (let i=0; i<radio.length; i++){
-		if (radio[i].checked) {
-			AnyClicked = true;
-		}
-	}
-	if (!AnyClicked) {
-		errorElement.innerHTML = "Please fill in an answer to question 4"; // om ingen radioknapp är checkad
-	} else {
-		errorElement.innerHTML = ""; // om minst en radioknapp är checkad
-	}
-}
 
 function validateCheckboxes() { // undersöker om minst en checkbox är checkad
 	let AnyChecked = false;
@@ -145,7 +157,36 @@ function validateCheckboxes() { // undersöker om minst en checkbox är checkad
     
 }
 
-  
+function validateRadio4() { // undersöker om minst en radioknapp är checkad
+	let AnyClicked = false;
+	console.log("radio clicked");
 
+	for (let i=0; i<question4radio.length; i++){
+		if (question4radio[i].checked) {
+			AnyClicked = true;
+		}
+	}
+	if (!AnyClicked) {
+		errorElement.innerHTML = "Please fill in an answer to question 4"; // om ingen radioknapp är checkad
+	} else {
+		errorElement.innerHTML = ""; // om minst en radioknapp är checkad
+	}
+}
+
+function validateRadio1() { // undersöker om minst en radioknapp är checkad
+	let AnyClicked = false;
+	console.log("radio clicked");
+
+	for (let i=0; i<question1radio.length; i++){
+		if (question1radio[i].checked) {
+			AnyClicked = true;
+		}
+	}
+	if (!AnyClicked) {
+		errorElement.innerHTML = "Please fill in an answer to question 1"; // om ingen radioknapp är checkad
+	} else {
+		errorElement.innerHTML = ""; // om minst en radioknapp är checkad
+	}
+}
 window.addEventListener("load", init);
 console.log("form submitted via JavaScript");
